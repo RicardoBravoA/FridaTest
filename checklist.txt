@@ -1,0 +1,47 @@
+https://fwhibbit.es/frida-en-android-introduccion
+https://medium.com/infosec-adventures/introduction-to-frida-5a3f51595ca1
+https://codeshare.frida.re/
+https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/
+
+
+sudo adb root
+sudo adb push frida-server /data/local/tmp/
+sudo adb shell "chmod 755 /data/local/tmp/frida-server"
+sudo adb shell "/data/local/tmp/frida-server &"
+
+
+ps -e | grep frida-server
+
+kill -9 pid
+
+
+
+adb shell 
+ps | grep frida-server 
+or 
+ps -e | grep frida-server 
+
+kill -9 pid
+
+
+
+
+Failed to enumerate processes: unable to connect to remote frida-server: closed
+---------------
+
+$ adb shell
+# su
+# /data/local/tmp/frida-server &
+
+
+sudo adb devices -l
+
+
+sudo frida-ps -D emulator-5554 -ai
+
+
+sudo frida -D emulator-5554 -f infosecadventures.allsafe -l '/Users/ricardobravo/Documents/eh/frida/scripts/pin_bypass.py' --no-pause
+sudo frida -D emulator-5554 -f infosecadventures.allsafe -l '/Users/ricardobravo/Documents/eh/frida/scripts/pin_bypass.js' --no-pause
+sudo frida -D emulator-5554 -f infosecadventures.allsafe -l '/Users/ricardobravo/Documents/eh/frida/scripts/pin_brute_force.js' --no-pause
+sudo frida -D emulator-5554 -f infosecadventures.allsafe -l '/Users/ricardobravo/Documents/eh/frida/scripts/root.js' --no-pause
+
